@@ -5,6 +5,7 @@
 // © Steversteves
 // Some Stuff added by @seatrips
 // Also Credits to https://chat.openai.com/
+// Inspired By http://www.bitcoinsmartmoney.com/ & https://bitcoin.live/
 
 //@version=5
 indicator("Directional Sentiment Line rev 3", overlay=true)
