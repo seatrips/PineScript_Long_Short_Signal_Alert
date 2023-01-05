@@ -4,6 +4,7 @@
 // This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © Steversteves
 // Some Stuff added by @seatrips
+// Also Credits to https://chat.openai.com/
 
 //@version=5
 indicator("Directional Sentiment Line rev 3", overlay=true)
