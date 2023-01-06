@@ -12,6 +12,15 @@ indicator("Directional Sentiment Line rev 3", overlay=true)
 
 lengthInput = input.int(150, "Length", minval = 2)
 
+//Add SMA's
+fastAverage = ta.sma(close, 20)
+slowAverage = ta.sma(close, 50)
+slowestAverage = ta.sma(close, 200)
+
+plot(fastAverage, color=color.fuchsia, linewidth=4)
+plot(slowAverage, color=color.rgb(53, 3, 7), linewidth=4)
+plot(slowestAverage, color=color.rgb(2, 19, 119), linewidth=4)
+
 // Determine variables 
 
 hi = ta.sma(high, lengthInput)
