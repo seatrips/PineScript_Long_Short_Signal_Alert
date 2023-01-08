@@ -42,8 +42,8 @@ bool middle = close >= lo and close <= hi
 
 color bull = color.new(color.green, 50)
 color bear = color.new(color.red, 50)
-color neutral = color.rgb(43, 42, 42)
-color standard = color.rgb(73, 74, 75)
+color neutral = color.orange
+color standard = color.blue
 color fillcolorbull = color.new(color.green, 88)
 color fillcolorbear = color.new(color.red, 88)
 color fillcolorneutral = color.new(color.gray, 88)
@@ -55,7 +55,7 @@ color locolor = lowabove ? bull : bear
 color opcolor = openabove ? bull : bear 
 color clcolor = closeabove ? bull : bear 
 color lowestcolor = pabelowlow ? neutral : standard
-color highestcolor = paabovehigh ? neutral : standard 
+color highestcolor = paabovehigh ? standard : neutral
 color fillfinal = closeabove ? fillcolorbull : closebelow ? fillcolorbear : middle ? fillcolorneutral : na 
 
 //Ribbon Plots
