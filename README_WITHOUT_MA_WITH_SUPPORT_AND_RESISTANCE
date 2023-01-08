@@ -120,3 +120,4 @@ plot(support, color=color.new(color.blue, 0), title='support', linewidth=2)
 //make labels show up next to lines
 plotshape(showlabels ? resistance : na, style=shape.labeldown, location=location.absolute, color=color.blue, textcolor=color.new(color.white, 0), show_last=1, text='resistance', offset=offset_val, title='resistance')
 plotshape(showlabels ? support : na, style=shape.labelup, location=location.absolute, color=color.blue, textcolor=color.new(color.white, 0), show_last=1, text='support', offset=offset_val, title='support')
+
