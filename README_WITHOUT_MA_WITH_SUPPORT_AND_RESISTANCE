@@ -1,6 +1,6 @@
 ```
 //@version=5
-indicator("", overlay=true)
+indicator("Directional Sentiment Line rev 3", overlay=true)
 
 lengthInput = input.int(150, "Length", minval = 2)
 
@@ -76,10 +76,10 @@ var isLong = false
 var isShort = false
 
 //Long
-long = not isLong and close > hi and close[1] <= hi[1]
+long = not isLong and close > hi and close[1] > hi[1]
 
 //Short
-short = not isShort and close < lo and close[1] >= lo[1]
+short = not isShort and close < lo and close[1] < lo[1]
 
 if (long)
     isLong := true
@@ -93,7 +93,7 @@ if (short)
 
 
 //plot signals on chart after confirmation
-plotshape(long and (not confirmOpen or close > open ), color=color.rgb(0, 229, 255), style=shape.arrowup, text="LONG", textcolor=color.rgb(0, 229, 255), title="Buy Signal", location=location.belowbar)
+plotshape(long and (not confirmOpen or close > open ), color=color.rgb(0, 229, 255), style=shape.arrowup, text="LONG", textcolor=color.blue, title="Buy Signal", location=location.belowbar)
 plotshape(short and (not confirmOpen or close < open), color=color.fuchsia, style=shape.arrowdown, text="SHORT", textcolor=color.fuchsia, title="Sell Signal", location=location.abovebar)
 
 //create alerts for buy and sell signals
@@ -114,10 +114,9 @@ resistance = ta.highest(high, 230)
 support = ta.lowest(low, 230)
 
 // Plot support and resistance lines
-plot(resistance, color=color.new(color.blue, 0), title='resistance', linewidth=2)
-plot(support, color=color.new(color.blue, 0), title='support', linewidth=2)
+plot(resistance, "resistance", color=color.new(color.blue, 0), linewidth=2)
+plot(support, "support", color=color.new(color.blue, 0), linewidth=2)
 
 //make labels show up next to lines
 plotshape(showlabels ? resistance : na, style=shape.labeldown, location=location.absolute, color=color.blue, textcolor=color.new(color.white, 0), show_last=1, text='resistance', offset=offset_val, title='resistance')
 plotshape(showlabels ? support : na, style=shape.labelup, location=location.absolute, color=color.blue, textcolor=color.new(color.white, 0), show_last=1, text='support', offset=offset_val, title='support')
-
