@@ -78,10 +78,10 @@ var isLong = false
 var isShort = false
 
 //Long
-long = not isLong and close > hi //and close[1] <= hi[1]
+long = not isLong and close > hi //and close[1] <= hi[1] #remove this and the // for extra confirmation candle
 
 //Short
-short = not isShort and close < lo //and close[1] >= lo[1]
+short = not isShort and close < lo //and close[1] >= lo[1] #remove this and the // for extra confirmation candle
 
 if (long)
     isLong := true
